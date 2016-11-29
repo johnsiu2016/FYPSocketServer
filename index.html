@@ -9,9 +9,13 @@
 
 <script>
     var socket = io.connect('http://localhost:5000');
-    socket.on('connected', function () {
-        alert('connected!')
+    socket.on('connect', () => {
+        socket.emit('test');
+        console.log('connected');
+        socket.disconnect();
     });
+    console.log('test');
+
 </script>
 </body>
 </html>
