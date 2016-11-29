@@ -1,6 +1,6 @@
-var app = require('express')();
-var server = require('http').Server(app);
-var io = require('socket.io')(server);
+let app = require('express')();
+let server = require('http').Server(app);
+let io = require('socket.io')(server);
 
 server.listen(5000);
 
@@ -9,8 +9,8 @@ app.get('/', function (req, res) {
 });
 
 io.on('connection', function (socket) {
-    socket.emit('news', { hello: 'world' });
-    socket.on('my other event', function (data) {
+    socket.on('initial', function (data) {
+        socket.emit('initialAck');
         console.log(data);
     });
 });
