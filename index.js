@@ -79,36 +79,69 @@ let waveformData = {
     ]
 };
 
-let vitalSignData = {
+let vitalSignData1 = {
     'HR': {
-        'top': 120,
+        'top': 130,
         'bottom': 50,
-        'data': 60
+        'data': 80
     },
     'SpO2': {
         'top': 100,
         'bottom': 90,
-        'data': 97
+        'data': 95
     },
     'RP': {
         'top': 45,
-        'bottom': 8,
-        'data': 40
+        'bottom': 10,
+        'data': 42
     },
     'ABP': {
-        'systolic': 116,
-        'diastolic': 78,
+        'systolic': 120,
+        'diastolic': 80,
         'mean': 91
     },
     'PAP': {
-        'systolic': 28,
-        'diastolic': 15,
-        'mean': 21
+        'systolic': 30,
+        'diastolic': 16,
+        'mean': 22
     },
     'NBP': {
-        'systolic': 120,
-        'diastolic': 80,
-        'mean': 90
+        'systolic': 122,
+        'diastolic': 81,
+        'mean': 92
+    }
+};
+
+let vitalSignData2 = {
+    'HR': {
+        'top': 120,
+        'bottom': 50,
+        'data': 70
+    },
+    'SpO2': {
+        'top': 100,
+        'bottom': 90,
+        'data': 99
+    },
+    'RP': {
+        'top': 45,
+        'bottom': 10,
+        'data': 30
+    },
+    'ABP': {
+        'systolic': 125,
+        'diastolic': 83,
+        'mean': 95
+    },
+    'PAP': {
+        'systolic': 35,
+        'diastolic': 19,
+        'mean': 24
+    },
+    'NBP': {
+        'systolic': 122,
+        'diastolic': 83,
+        'mean': 91
     }
 };
 
@@ -142,12 +175,14 @@ io.on('connection', function (socket) {
         });
 
         int2Array = [];
+        let flip = false;
         Object.keys(items2).forEach(function(key){
             let cur = items2[key];
 
             let int2 = setInterval(()=>{
-                socket.emit(key, waveformData[cur.vitalSign]);
-            }, 1800);
+                socket.emit(key, flip ? vitalSignData1[cur.vitalSign] : vitalSignData2[cur.vitalSign]);
+                flip = !flip;
+            }, 2800);
 
             int2Array.push(int2);
         });
