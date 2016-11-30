@@ -112,6 +112,9 @@ let vitalSignData = {
     }
 };
 
+int1Array = [];
+int2Array = [];
+
 io.on('connection', function (socket) {
     socket.on('initial', function (data) {
         let {
@@ -151,10 +154,10 @@ io.on('connection', function (socket) {
     });
 
     socket.on('disconnect', () => {
-        int1Array.map((int1)=>{
+        int1Array && int1Array.map((int1)=>{
             clearInterval(int1);
         });
-        int2Array.map((int2)=>{
+        int2Array && int2Array.map((int2)=>{
             clearInterval(int2);
         });
         console.log('disconnect test')
