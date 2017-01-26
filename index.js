@@ -175,13 +175,13 @@ io.on('connection', function (socket) {
         });
 
         int2Array = [];
-        let flip = false;
         Object.keys(vitalSignItems).forEach(function(key){
             let cur = vitalSignItems[key];
-
+            cur.filp = false;
             let int2 = setInterval(()=>{
-                socket.emit(key, flip ? vitalSignData1[cur.vitalSign] : vitalSignData2[cur.vitalSign]);
-                flip = !flip;
+                console.log(`test ${key} ${cur.vitalSign}`);
+                socket.emit(key, cur.filp ? vitalSignData1[cur.vitalSign] : vitalSignData2[cur.vitalSign]);
+                cur.filp = !cur.filp;
             }, 2800);
 
             int2Array.push(int2);
