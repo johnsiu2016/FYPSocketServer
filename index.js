@@ -151,8 +151,8 @@ int2Array = [];
 io.on('connection', function (socket) {
     socket.on('initial', function (data) {
         let {
-            items1,
-            items2,
+            waveformItems,
+            vitalSignItems,
             ip,
             port,
             protocol,
@@ -163,8 +163,8 @@ io.on('connection', function (socket) {
         socket.emit('initialAck');
 
         int1Array = [];
-        Object.keys(items1).forEach(function(key){
-            let cur = items1[key];
+        Object.keys(waveformItems).forEach(function(key){
+            let cur = waveformItems[key];
 
             let int1 = setInterval(()=>{
                 console.log(`test ${key} ${cur.waveform}`);
@@ -176,8 +176,8 @@ io.on('connection', function (socket) {
 
         int2Array = [];
         let flip = false;
-        Object.keys(items2).forEach(function(key){
-            let cur = items2[key];
+        Object.keys(vitalSignItems).forEach(function(key){
+            let cur = vitalSignItems[key];
 
             let int2 = setInterval(()=>{
                 socket.emit(key, flip ? vitalSignData1[cur.vitalSign] : vitalSignData2[cur.vitalSign]);
