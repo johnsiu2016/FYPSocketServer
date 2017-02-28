@@ -10,10 +10,16 @@
 <script>
     var socket = io.connect('http://localhost:5000');
     socket.on('connect', () => {
-        socket.emit('test');
-        console.log('connected');
+        console.log("connected");
+        socket.emit("initial", "initial message", (message) => {
+            console.log(message)
+        })
     });
-    console.log('test');
+
+    socket.on('data', (data) => {
+
+    });
+    console.log('loaded script');
 
 </script>
 </body>
