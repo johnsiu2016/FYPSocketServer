@@ -73,7 +73,7 @@
                 <member name="content_type" stringMaxLength="64" type="string"/>
                 <member name="image" type="nonBasic"  nonBasicTypeName= "ice::ImageData"/>
             </struct>
-            <struct name= "DeviceIdentity" extensibility= "mutable">
+            <struct name= "DeviceIdentity" extensibility= "extensible">
                 <member name="unique_device_identifier" type="nonBasic"  nonBasicTypeName= "ice::UniqueDeviceIdentifier" key="true"/>
                 <member name="manufacturer" type="nonBasic"  nonBasicTypeName= "ice::LongString"/>
                 <member name="model" type="nonBasic"  nonBasicTypeName= "ice::LongString"/>
@@ -239,6 +239,9 @@
 
             <register_type name="ice::Numeric"  type_ref="ice::Numeric" />
             <topic name="Numeric"    register_type_ref="ice::Numeric"/>
+
+            <register_type name="ice::DeviceIdentity"  type_ref="ice::DeviceIdentity" />
+            <topic name="DeviceIdentity"    register_type_ref="ice::DeviceIdentity"/>
         </domain>
     </domain_library>
 
@@ -250,6 +253,7 @@
             <subscriber name="MySubscriber">
                 <data_reader name="SampleArrayReader" topic_ref="SampleArray" />
                 <data_reader name="NumericReader" topic_ref="Numeric" />
+                <data_reader name="DeviceIdentityReader" topic_ref="DeviceIdentity"/>
             </subscriber>
 
         </domain_participant>
