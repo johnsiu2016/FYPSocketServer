@@ -95,7 +95,7 @@
                 <enumerator name="Simulated"/>
                 <enumerator name="Network"/>
             </enum>
-            <struct name= "DeviceConnectivity" extensibility= "mutable">
+            <struct name= "DeviceConnectivity" extensibility= "extensible">
                 <member name="unique_device_identifier" type="nonBasic"  nonBasicTypeName= "ice::UniqueDeviceIdentifier" key="true"/>
                 <member name="state" type="nonBasic"  nonBasicTypeName= "ice::ConnectionState"/>
                 <member name="type" type="nonBasic"  nonBasicTypeName= "ice::ConnectionType"/>
@@ -242,6 +242,9 @@
 
             <register_type name="ice::DeviceIdentity"  type_ref="ice::DeviceIdentity" />
             <topic name="DeviceIdentity"    register_type_ref="ice::DeviceIdentity"/>
+
+            <register_type name="ice::DeviceConnectivity"  type_ref="ice::DeviceConnectivity" />
+            <topic name="DeviceConnectivity"    register_type_ref="ice::DeviceConnectivity"/>
         </domain>
     </domain_library>
 
@@ -254,6 +257,7 @@
                 <data_reader name="SampleArrayReader" topic_ref="SampleArray" />
                 <data_reader name="NumericReader" topic_ref="Numeric" />
                 <data_reader name="DeviceIdentityReader" topic_ref="DeviceIdentity"/>
+                <data_reader name="DeviceConnectivityReader" topic_ref="DeviceConnectivity"/>
             </subscriber>
 
         </domain_participant>
