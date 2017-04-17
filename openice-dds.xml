@@ -252,14 +252,28 @@
     <!-- Participant library -->
     <domain_participant_library name="MyParticipantLibrary">
         <domain_participant name="Zero" domain_ref="MyDomainLibrary::MyDomain">
-
             <subscriber name="MySubscriber">
                 <data_reader name="SampleArrayReader" topic_ref="SampleArray" />
                 <data_reader name="NumericReader" topic_ref="Numeric" />
+            </subscriber>
+        </domain_participant>
+
+
+        <domain_participant name="SampleArray" domain_ref="MyDomainLibrary::MyDomain">
+            <subscriber name="MySubscriber">
+                <data_reader name="SampleArrayReader" topic_ref="SampleArray" />
+            </subscriber>
+        </domain_participant>
+        <domain_participant name="Numeric" domain_ref="MyDomainLibrary::MyDomain">
+            <subscriber name="MySubscriber">
+                <data_reader name="NumericReader" topic_ref="Numeric" />
+            </subscriber>
+        </domain_participant>
+        <domain_participant name="DeviceInfo" domain_ref="MyDomainLibrary::MyDomain">
+            <subscriber name="MySubscriber">
                 <data_reader name="DeviceIdentityReader" topic_ref="DeviceIdentity"/>
                 <data_reader name="DeviceConnectivityReader" topic_ref="DeviceConnectivity"/>
             </subscriber>
-
         </domain_participant>
     </domain_participant_library>
 </dds>
