@@ -10,6 +10,7 @@ import {interpolateArray} from '../utils/utilityFunctions';
 
 let _sockets = {};
 let devices = process.devices = {};
+let _devicesId = {};
 
 io.on('connection', function (socket) {
 	socket.on('initial', function (deviceId, ackCb) {
@@ -20,14 +21,10 @@ io.on('connection', function (socket) {
 				devices[deviceId]['sockets'] = [];
 			}
 			devices[deviceId]['sockets'].push(socket.id);
+			_devicesId[socket.id] = deviceId;
 		}
 
-
-
-
-
 		console.log(devices)
-		//console.log(_waveformItems)
 		console.log(Object.keys(_sockets).length);
 
 		if (ackCb) {
@@ -37,7 +34,7 @@ io.on('connection', function (socket) {
 
 	socket.on('disconnect', () => {
 		delete _sockets[socket.id];
-		delete _waveformItems[socket.id];
+		devices[_devicesId[socket.id]].sockets = devices[_devicesId[socket.id]].sockets.filter(id => !socket.id);
 	});
 });
 
@@ -64,10 +61,7 @@ function onDataAvailableSA() {
 			let sampleArray = sampleArrayInput.samples.getJSON(i);
 			let {
 				values,
-				frequency,
 				metric_id,
-				device_time,
-				presentation_time,
 				unique_device_identifier
 			} = sampleArray;
 			identifier = unique_device_identifier;
@@ -92,7 +86,7 @@ function onDataAvailableSA() {
 				devices[unique_device_identifier]['sampleArray'][metric_id] = [];
 			}
 			//devices[unique_device_identifier]['sampleArray'][metric_id].push(normalizedWaveform);
-			emitDatatoClient(metric_id, normalizedWaveform);
+			emitDatatoClient(unique_device_identifier, metric_id, normalizedWaveform);
 		}
 	}
 }
@@ -108,8 +102,6 @@ function onDataAvailableN() {
 			let {
 				value,
 				metric_id,
-				device_time,
-				presentation_time,
 				unique_device_identifier
 			} = numeric;
 			identifier = unique_device_identifier;
@@ -126,13 +118,13 @@ function onDataAvailableN() {
 			//devices[unique_device_identifier]['numeric'][metric_id].push(value);
 			switch (metric_id) {
 				case "MDC_PRESS_BLD_ART_ABP_SYS":
-					ABPTemplate(value, 'sys');
+					ABPTemplate(unique_device_identifier, value, 'sys');
 					break;
 				case "MDC_PRESS_BLD_ART_ABP_DIA":
-					ABPTemplate(value, 'dia');
+					ABPTemplate(unique_device_identifier, value, 'dia');
 					break;
 				default:
-					emitDatatoClient(metric_id, numericalTemplate(value));
+					emitDatatoClient(unique_device_identifier, metric_id, numericalTemplate(value));
 					break;
 			}
 		}
@@ -181,10 +173,6 @@ function onDataAvailableInfo() {
 			devices[unique_device_identifier]['deviceConnectivity'] = deviceConnectivity;
 			if (deviceConnectivity.state === 'Terminal') {
 				delete devices[unique_device_identifier];
-				// setTimeout(()=>{
-				// 	delete devices[unique_device_identifier];
-				// }, 1000 * 10);
-
 				return;
 			}
 		}
@@ -214,10 +202,12 @@ function onDataAvailableInfo() {
 	}
 }
 
-function emitDatatoClient(metric_id, sampleArrayOrNumeric) {
-	for (let socketId in _sockets) {
-		const socket = _sockets[socketId];
-		socket.emit(metric_id, sampleArrayOrNumeric)
+function emitDatatoClient(deviceId, metric_id, sampleArrayOrNumeric) {
+	if (devices[deviceId]['sockets']) {
+		for (let socketId of devices[deviceId]['sockets']) {
+			let socket = _sockets[socketId];
+			socket.emit(metric_id, sampleArrayOrNumeric)
+		}
 	}
 }
 
@@ -235,7 +225,7 @@ let ABPTemplate = (function() {
 		mean: null
 	};
 
-	return (data, name) => {
+	return (deviceId, data, name) => {
 		if (name === "sys") {
 			ABP.systolic = data;
 			ABPFlag = ABPFlag + 1;
@@ -246,7 +236,7 @@ let ABPTemplate = (function() {
 
 		if (ABPFlag === 2) {
 			ABP.mean = Math.round((ABP.systolic + ABP.diastolic * 2) / 3);
-			emitDatatoClient("MDC_PRESS_BLD_ART_ABP_NUMERIC", ABP);
+			emitDatatoClient(deviceId, "MDC_PRESS_BLD_ART_ABP_NUMERIC", ABP);
 			ABPFlag = 0;
 		}
 	};
