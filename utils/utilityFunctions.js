@@ -1,3 +1,17 @@
+export function apiOutputTemplate(type, message, data) {
+	return {
+		status: {
+			type: type,
+			message: message
+		},
+		response: {
+			...data
+		}
+	}
+}
+
+
+
 export function requestWaveformDataInterval(type, second, cb) {
     const execCalculateECGArray = calculateECGArray(type);
     return setInterval(() => {
