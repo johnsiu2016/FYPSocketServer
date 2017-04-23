@@ -16,7 +16,7 @@ io.on('connection', function (socket) {
 	socket.on('initial', function (deviceId, ackCb) {
 		_sockets[socket.id] = socket;
 
-		if (devices[deviceId]) {
+		if (deviceId && devices[deviceId]) {
 			if (!devices[deviceId]['sockets']) {
 				devices[deviceId]['sockets'] = [];
 			}
@@ -34,7 +34,9 @@ io.on('connection', function (socket) {
 
 	socket.on('disconnect', () => {
 		delete _sockets[socket.id];
-		devices[_devicesId[socket.id]].sockets = devices[_devicesId[socket.id]].sockets.filter(id => !socket.id);
+		if (devices[_devicesId[socket.id]]) {
+			devices[_devicesId[socket.id]].sockets = devices[_devicesId[socket.id]].sockets.filter(id => !socket.id);
+		}
 	});
 });
 
