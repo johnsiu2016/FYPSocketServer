@@ -251,4 +251,4 @@ app.get('/', function (req, res) {
 	res.sendFile(path.join(process.cwd(), '/index.html'));
 });
 
-require('./api');
+require('./apiapp');
