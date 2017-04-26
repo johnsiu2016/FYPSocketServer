@@ -10,7 +10,7 @@ exports.getDevices = (req, res) => {
 exports.listSimulationWaveform = (req, res) => {
 	WaveformSimulation.find({})
 		.then((allWaveforms) => {
-			console.log(allWaveforms);
+			//console.log(allWaveforms);
 			return res.json(uilityFunction.apiOutputTemplate('success', 'success', {
 				waveforms: allWaveforms
 			}));
@@ -66,6 +66,7 @@ exports.patchSimulationWaveform = (req, res) => {
 			if (!foundWaveform) {
 				return res.json(uilityFunction.apiOutputTemplate('error', 'Not Found'));
 			}
+			console.log(req.body)
 			for (let type in req.body) {
 				foundWaveform.type = type || foundWaveform.type;
 				foundWaveform.value = req.body[type] || foundWaveform.value;
@@ -73,6 +74,7 @@ exports.patchSimulationWaveform = (req, res) => {
 			return foundWaveform.save();
 		})
 		.then((savedFoundWaveform) => {
+		console.log(savedFoundWaveform)
 			return res.json(uilityFunction.apiOutputTemplate('success', 'success', {
 				_id: savedFoundWaveform.id
 			}));
