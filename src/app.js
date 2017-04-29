@@ -6,7 +6,8 @@ const io = require('socket.io')(server);
 const path = require('path');
 const rti = require('rticonnextdds-connector');
 import {interpolateArray} from '../utils/utilityFunctions';
-
+// const fs = require('fs');
+// let file = fs.createWriteStream('./test.csv');
 
 let _sockets = {};
 let devices = process.devices = {};
@@ -64,12 +65,23 @@ function onDataAvailableSA() {
 			let {
 				values,
 				metric_id,
-				unique_device_identifier
+				unique_device_identifier,
+				frequency,
 			} = sampleArray;
 			identifier = unique_device_identifier;
 
-			let formatLength = 120 * Math.ceil(values.length / 120);
+			// console.log(sampleArray.metric_id);
+			// console.log(sampleArray.frequency);
+			// console.log(sampleArray.values.length);
+
+			let formatFrequency = 60 * Math.ceil(frequency / 60);
+			let time = Math.floor((values.length / frequency));
+			let formatLength = formatFrequency * time;
 			let formatWaveform = interpolateArray(values, formatLength);
+			// console.log('formatLength', formatLength);
+			// console.log('formatFrequency', formatFrequency);
+			// console.log('time', Math.floor((values.length / frequency)));
+
 			const max = Math.max(...values);
 			const min = Math.min(...values);
 			const dataHeight = max - min;
@@ -88,7 +100,13 @@ function onDataAvailableSA() {
 				devices[unique_device_identifier]['sampleArray'][metric_id] = [];
 			}
 			//devices[unique_device_identifier]['sampleArray'][metric_id].push(normalizedWaveform);
-			emitDatatoClient(unique_device_identifier, metric_id, normalizedWaveform);
+			emitDatatoClient(unique_device_identifier, metric_id, {
+				normalizedWaveform,
+				frequency: formatFrequency
+			});
+
+			// console.log('length', normalizedWaveform.length);
+			// console.log('frequency', formatFrequency);
 		}
 	}
 }
@@ -219,7 +237,7 @@ function numericalTemplate(data) {
 	}
 }
 
-let ABPTemplate = (function() {
+let ABPTemplate = (function () {
 	let ABPFlag = 0;
 	let ABP = {
 		systolic: null,
