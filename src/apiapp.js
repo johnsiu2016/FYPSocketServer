@@ -3,10 +3,12 @@ const app = express();
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const logger = require('morgan');
+const path = require('path');
 
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
+app.use('/', express.static(path.join(__dirname, 'public')));
 
 mongoose.Promise = global.Promise;
 mongoose.connect('mongodb://localhost:27017/patientMonitor');

@@ -1,0 +1,1948 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>API Reference</title>
+
+    <style>
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #f6aa11;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .cd {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+}
+.highlight .nn {
+  color: #ffffff;
+}
+.highlight .nl {
+  color: #ffffff;
+}
+.highlight .ni {
+  color: #ffffff;
+}
+.highlight .bp {
+  color: #ffffff;
+}
+.highlight .vg {
+  color: #ffffff;
+}
+.highlight .vi {
+  color: #ffffff;
+}
+.highlight .nv {
+  color: #ffffff;
+}
+.highlight .w {
+  color: #ffffff;
+}
+.highlight {
+  color: #ffffff;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
+}
+    </style>
+    <link href="stylesheets/screen.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all.js"></script>
+  </head>
+
+  <body class="index" data-languages="[&quot;details&quot;]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar.png" alt="Navbar" />
+      </span>
+    </a>
+    <div class="tocify-wrapper">
+      <img src="images/logo.png" alt="Logo" />
+        <div class="lang-selector">
+              <a href="#" data-language-name="details">details</a>
+        </div>
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <div id="toc">
+      </div>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id="introduction">Introduction</h1>
+
+<p>Welcome to the this API!</p>
+
+<h1 id="devices">Devices</h1>
+
+<h2 id="get-devices">Get Devices</h2>
+
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"response"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"IZ0WZsVGDwIIPSpMq7KS38wVcgkHA3dIOVLT"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"deviceIdentity"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"manufacturer"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"model"</span><span class="p">:</span><span class="w"> </span><span class="s2">"</span><span class="se">\u</span><span class="s2">0000</span><span class="se">\u</span><span class="s2">0000</span><span class="se">\u</span><span class="s2">0000M</span><span class="se">\u</span><span class="s2">0000</span><span class="se">\u</span><span class="s2">0000</span><span class="se">\u</span><span class="s2">0000u</span><span class="se">\u</span><span class="s2">0000</span><span class="se">\u</span><span class="s2">0000</span><span class="se">\u</span><span class="s2">0000l</span><span class="se">\u</span><span class="s2">0000</span><span class="se">\u</span><span class="s2">0000</span><span class="se">\u</span><span class="s2">0000t</span><span class="se">\u</span><span class="s2">0000</span><span class="se">\u</span><span class="s2">0000</span><span class="se">\u</span><span class="s2">0000i</span><span class="se">\u</span><span class="s2">0000</span><span class="se">\u</span><span class="s2">0000</span><span class="se">\u</span><span class="s2">0000p</span><span class="se">\u</span><span class="s2">0000</span><span class="se">\u</span><span class="s2">0000</span><span class="se">\u</span><span class="s2">0000a</span><span class="se">\u</span><span class="s2">0000</span><span class="se">\u</span><span class="s2">0000</span><span class="se">\u</span><span class="s2">0000r</span><span class="se">\u</span><span class="s2">0000</span><span class="se">\u</span><span class="s2">0000</span><span class="se">\u</span><span class="s2">0000a</span><span class="se">\u</span><span class="s2">0000</span><span class="se">\u</span><span class="s2">0000</span><span class="se">\u</span><span class="s2">0000m</span><span class="se">\u</span><span class="s2">0000</span><span class="se">\u</span><span class="s2">0000</span><span class="se">\u</span><span class="s2">0000e</span><span class="se">\u</span><span class="s2">0000</span><span class="se">\u</span><span class="s2">0000</span><span class="se">\u</span><span class="s2">0000t</span><span class="se">\u</span><span class="s2">0000</span><span class="se">\u</span><span class="s2">0000</span><span class="se">\u</span><span class="s2">0000e</span><span class="se">\u</span><span class="s2">0000</span><span class="se">\u</span><span class="s2">0000</span><span class="se">\u</span><span class="s2">0000r</span><span class="se">\u</span><span class="s2">0000</span><span class="se">\u</span><span class="s2">0000</span><span class="se">\u</span><span class="s2">0000 </span><span class="se">\u</span><span class="s2">0000</span><span class="se">\u</span><span class="s2">0000</span><span class="se">\u</span><span class="s2">0000(</span><span class="se">\u</span><span class="s2">0000</span><span class="se">\u</span><span class="s2">0000</span><span class="se">\u</span><span class="s2">0000S</span><span class="se">\u</span><span class="s2">0000</span><span class="se">\u</span><span class="s2">0000</span><span class="se">\u</span><span class="s2">0000i</span><span class="se">\u</span><span class="s2">0000</span><span class="se">\u</span><span class="s2">0000</span><span class="se">\u</span><span class="s2">0000m</span><span class="se">\u</span><span class="s2">0000</span><span class="se">\u</span><span class="s2">0000</span><span class="se">\u</span><span class="s2">0000u</span><span class="se">\u</span><span class="s2">0000</span><span class="se">\u</span><span class="s2">0000</span><span class="se">\u</span><span class="s2">0000l</span><span class="se">\u</span><span class="s2">0000</span><span class="se">\u</span><span class="s2">0000</span><span class="se">\u</span><span class="s2">0000a</span><span class="se">\u</span><span class="s2">0000</span><span class="se">\u</span><span class="s2">0000</span><span class="se">\u</span><span class="s2">0000t</span><span class="se">\u</span><span class="s2">0000</span><span class="se">\u</span><span class="s2">0000</span><span class="se">\u</span><span class="s2">0000e</span><span class="se">\u</span><span class="s2">0000</span><span class="se">\u</span><span class="s2">0000</span><span class="se">\u</span><span class="s2">0000d</span><span class="se">\u</span><span class="s2">0000</span><span class="se">\u</span><span class="s2">0000</span><span class="se">\u</span><span class="s2">0000)"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"serial_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0x"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"icon"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"content_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"image/png"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAH8AAAB6CAIAAAAZEhv3AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDIxIDc5LjE1NTc3MiwgMjAxNC8wMS8xMy0xOTo0NDowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTQgTWFjaW50b3NoIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjczNjNFNzgzMzkzMzExRTRCQkM1RkIyMUVGRTQxRjhGIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjczNjNFNzg0MzkzMzExRTRCQkM1RkIyMUVGRTQxRjhGIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6NzM2M0U3ODEzOTMzMTFFNEJCQzVGQjIxRUZFNDFGOEYiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6NzM2M0U3ODIzOTMzMTFFNEJCQzVGQjIxRUZFNDFGOEYiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4xSM4zAAAWDUlEQVR42uxd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"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"build"</span><span class="p">:</span><span class="w"> </span><span class="s2">"v0.6.3 built:20-May-2015 04:42 PM on 1.8.0_40"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"operating_system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mac OS X x86_64 10.12.4"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="s2">"deviceConnectivity"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Connected"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"info"</span><span class="p">:</span><span class="w"> </span><span class="s2">"</span><span class="se">\u</span><span class="s2">0000</span><span class="se">\u</span><span class="s2">0000</span><span class="se">\u</span><span class="s2">0000c</span><span class="se">\u</span><span class="s2">0000</span><span class="se">\u</span><span class="s2">0000</span><span class="se">\u</span><span class="s2">0000o</span><span class="se">\u</span><span class="s2">0000</span><span class="se">\u</span><span class="s2">0000</span><span class="se">\u</span><span class="s2">0000n</span><span class="se">\u</span><span class="s2">0000</span><span class="se">\u</span><span class="s2">0000</span><span class="se">\u</span><span class="s2">0000n</span><span class="se">\u</span><span class="s2">0000</span><span class="se">\u</span><span class="s2">0000</span><span class="se">\u</span><span class="s2">0000e</span><span class="se">\u</span><span class="s2">0000</span><span class="se">\u</span><span class="s2">0000</span><span class="se">\u</span><span class="s2">0000c</span><span class="se">\u</span><span class="s2">0000</span><span class="se">\u</span><span class="s2">0000</span><span class="se">\u</span><span class="s2">0000t</span><span class="se">\u</span><span class="s2">0000</span><span class="se">\u</span><span class="s2">0000</span><span class="se">\u</span><span class="s2">0000 </span><span class="se">\u</span><span class="s2">0000</span><span class="se">\u</span><span class="s2">0000</span><span class="se">\u</span><span class="s2">0000r</span><span class="se">\u</span><span class="s2">0000</span><span class="se">\u</span><span class="s2">0000</span><span class="se">\u</span><span class="s2">0000e</span><span class="se">\u</span><span class="s2">0000</span><span class="se">\u</span><span class="s2">0000</span><span class="se">\u</span><span class="s2">0000q</span><span class="se">\u</span><span class="s2">0000</span><span class="se">\u</span><span class="s2">0000</span><span class="se">\u</span><span class="s2">0000u</span><span class="se">\u</span><span class="s2">0000</span><span class="se">\u</span><span class="s2">0000</span><span class="se">\u</span><span class="s2">0000e</span><span class="se">\u</span><span class="s2">0000</span><span class="se">\u</span><span class="s2">0000</span><span class="se">\u</span><span class="s2">0000s</span><span class="se">\u</span><span class="s2">0000</span><span class="se">\u</span><span class="s2">0000</span><span class="se">\u</span><span class="s2">0000t</span><span class="se">\u</span><span class="s2">0000</span><span class="se">\u</span><span class="s2">0000</span><span class="se">\u</span><span class="s2">0000e</span><span class="se">\u</span><span class="s2">0000</span><span class="se">\u</span><span class="s2">0000</span><span class="se">\u</span><span class="s2">0000d"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"valid_targets"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="s2">"numeric"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"MDC_PULS_OXIM_PULS_RATE"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+        </span><span class="s2">"MDC_PULS_OXIM_SAT_O2"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+        </span><span class="s2">"MDC_PRESS_BLD_ART_ABP_SYS"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+        </span><span class="s2">"MDC_PRESS_BLD_ART_ABP_DIA"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+        </span><span class="s2">"MDC_CO2_RESP_RATE"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+        </span><span class="s2">"MDC_AWAY_CO2_ET"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+        </span><span class="s2">"MDC_ECG_HEART_RATE"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+        </span><span class="s2">"MDC_TTHOR_RESP_RATE"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="s2">"sampleArray"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"MDC_PULS_OXIM_PLETH"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+        </span><span class="s2">"MDC_PRESS_BLD_ART_ABP"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+        </span><span class="s2">"MDC_AWAY_CO2"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+        </span><span class="s2">"MDC_ECG_LEAD_I"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+        </span><span class="s2">"MDC_ECG_LEAD_II"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+        </span><span class="s2">"MDC_ECG_LEAD_III"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="s2">"sockets"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"rgHviiI7Z3iQpXFzAAAD"</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves all devices information.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET /api/devices</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<p>No Parameters require.</p>
+
+<h1 id="simulation-waveforms">Simulation Waveforms</h1>
+
+<h2 id="get-simulation-waveforms-list">GET Simulation Waveforms List</h2>
+
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"response"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"waveforms"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"59058fa26e9d925205cb93a7"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-04-30T07:17:54.027Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-04-30T07:17:54.027Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MDC_ECG_LEAD_II"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"__v"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="mi">0</span><span class="p">,</span><span class="w">
+          </span><span class="mi">0</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.0000050048828125</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.0000137939453125</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.000049560546875</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.00008740234375</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.00015966796875</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.000262451171875</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.0003975830078125</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.0005687255859375</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.0007802734375</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.001037353515625</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.0013468017578125</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.00172119140625</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.0021756591796875</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.0027232666015625</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.0033880615234375</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.004206787109375</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.0052380371093750005</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.006586181640625</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.008400146484375001</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.010904296875</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.0144892578125</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.0196798095703125</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.049684204101562504</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.0886883544921875</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.11185363769531251</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.134164306640625</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.137352294921875</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.1160369873046875</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.08516308593750001</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.0539765625</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.014997436523437501</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-0.015882568359375</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-0.0387554931640625</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-0.06125732421875</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-0.0745780029296875</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-0.07479357910156251</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-0.0725338134765625</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-0.0418538818359375</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.08582861328125001</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.397717529296875</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.8136408691406251</span><span class="p">,</span><span class="w">
+          </span><span class="mf">1.2295617980957032</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.9944150390625001</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.2824605712890625</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-0.38949267578125</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-0.597251220703125</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-0.425675537109375</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-0.1537947998046875</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-0.0500914306640625</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-0.0111041259765625</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.0027451171875</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.0071739501953125</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.008443359375</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.0094327392578125</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.012530517578125</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.0176046142578125</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.0300162353515625</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.0433489990234375</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.056962646484375004</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.0704832763671875</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.0770511474609375</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.0898175048828125</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.10311853027343751</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.117046142578125</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.1312630615234375</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.1529300537109375</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.167607177734375</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.1899068603515625</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.2124422607421875</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.235044677734375</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.2575535888671875</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.2724073486328125</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.286978271484375</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.3007579345703125</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.3067425537109375</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.3106370849609375</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.303756103515625</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.2897236328125</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.25916931152343753</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.2200599365234375</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.1728209228515625</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.133416259765625</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.086224853515625</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.05493408203125</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.02409423828125</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.00922607421875</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-0.0043409423828125</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-0.0097349853515625</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-0.013127685546875</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-0.01423095703125</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-0.013834716796875</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-0.012556030273437501</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-0.010675048828125</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-0.00835888671875</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-0.0057305908203125</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-0.0000562744140625</span><span class="p">,</span><span class="w">
+          </span><span class="mi">0</span><span class="p">,</span><span class="w">
+          </span><span class="mi">0</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"59058fa26e9d925205cb93a9"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-04-30T07:17:54.028Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-04-30T07:17:54.028Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MDC_PRESS_BLD_ART_ABP"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"__v"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="mf">-0.615617</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-0.593225</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-0.561621</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-0.520447</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-0.4697</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-0.409714</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-0.341109</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-0.264733</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-0.181634</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-0.0930303</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-0.000284727</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.0951251</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.19164</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.287667</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.381656</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.472156</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.557875</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.637704</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.710714</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.776128</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.833297</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.881714</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.921045</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.951157</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.972135</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.984253</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.987913</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.983624</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.971983</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.953633</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.929243</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.899507</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.865121</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.826765</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.785082</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.740661</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.694015</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.645587</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.59582</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.545196</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.494246</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.443533</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.393608</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.344981</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.298127</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.253494</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.211507</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.172554</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.136978</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.105059</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.0770082</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.0529552</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.0329633</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.0170408</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.00512365</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-0.00293051</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-0.00733322</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-0.00836638</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-0.00638339</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-0.00180418</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.00489955</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.0132056</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.0225461</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.0323575</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.0421177</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.0513493</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.0596349</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.0666362</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.0720919</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.0758241</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.0777405</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.0777992</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.0759569</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.0721549</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.0663167</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.058373</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.0483321</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.0363186</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.0225527</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.00728563</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-0.00926222</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-0.0269201</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-0.0455507</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-0.0650429</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-0.0853176</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-0.106298</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-0.127884</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-0.149957</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-0.172377</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-0.194996</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-0.217691</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-0.240364</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-0.26293</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-0.285325</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-0.30749</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-0.329363</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-0.350911</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-0.37213</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-0.393034</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-0.413638</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-0.433932</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-0.453862</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-0.473337</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-0.492255</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-0.510515</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-0.528009</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-0.544592</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-0.56005</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-0.574047</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-0.586056</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-0.595292</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-0.600716</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-0.601094</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"59058fa26e9d925205cb93a6"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-04-30T07:17:54.021Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-04-30T07:17:54.021Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MDC_ECG_LEAD_I"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"__v"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="mi">0</span><span class="p">,</span><span class="w">
+          </span><span class="mi">0</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.0000050048828125</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.0000137939453125</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.000049560546875</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.00008740234375</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.00015966796875</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.000262451171875</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.0003975830078125</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.0005687255859375</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.0007802734375</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.001037353515625</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.0013468017578125</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.00172119140625</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.0021756591796875</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.0027232666015625</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.0033880615234375</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.004206787109375</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.0052380371093750005</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.006586181640625</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.008400146484375001</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.010904296875</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.0144892578125</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.0196798095703125</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.049684204101562504</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.0886883544921875</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.11185363769531251</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.134164306640625</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.137352294921875</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.1160369873046875</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.08516308593750001</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.0539765625</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.014997436523437501</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-0.015882568359375</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-0.0387554931640625</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-0.06125732421875</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-0.0745780029296875</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-0.07479357910156251</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-0.0725338134765625</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-0.0418538818359375</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.08582861328125001</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.397717529296875</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.8136408691406251</span><span class="p">,</span><span class="w">
+          </span><span class="mf">1.2295617980957032</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.9944150390625001</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.2824605712890625</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-0.38949267578125</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-0.597251220703125</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-0.425675537109375</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-0.1537947998046875</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-0.0500914306640625</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-0.0111041259765625</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.0027451171875</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.0071739501953125</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.008443359375</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.0094327392578125</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.012530517578125</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.0176046142578125</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.0300162353515625</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.0433489990234375</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.056962646484375004</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.0704832763671875</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.0770511474609375</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.0898175048828125</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.10311853027343751</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.117046142578125</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.1312630615234375</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.1529300537109375</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.167607177734375</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.1899068603515625</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.2124422607421875</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.235044677734375</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.2575535888671875</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.2724073486328125</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.286978271484375</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.3007579345703125</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.3067425537109375</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.3106370849609375</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.303756103515625</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.2897236328125</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.25916931152343753</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.2200599365234375</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.1728209228515625</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.133416259765625</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.086224853515625</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.05493408203125</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.02409423828125</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.00922607421875</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-0.0043409423828125</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-0.0097349853515625</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-0.013127685546875</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-0.01423095703125</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-0.013834716796875</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-0.012556030273437501</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-0.010675048828125</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-0.00835888671875</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-0.0057305908203125</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-0.0000562744140625</span><span class="p">,</span><span class="w">
+          </span><span class="mi">0</span><span class="p">,</span><span class="w">
+          </span><span class="mi">0</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"59058fa26e9d925205cb93aa"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-04-30T07:17:54.029Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-04-30T07:17:54.029Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MDC_PULS_OXIM_PLETH"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"__v"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="mf">1252.75</span><span class="p">,</span><span class="w">
+          </span><span class="mi">1045</span><span class="p">,</span><span class="w">
+          </span><span class="mi">1175</span><span class="p">,</span><span class="w">
+          </span><span class="mi">1655</span><span class="p">,</span><span class="w">
+          </span><span class="mi">2292</span><span class="p">,</span><span class="w">
+          </span><span class="mf">2853.75</span><span class="p">,</span><span class="w">
+          </span><span class="mf">3056.75</span><span class="p">,</span><span class="w">
+          </span><span class="mf">2913.25</span><span class="p">,</span><span class="w">
+          </span><span class="mf">2553.5</span><span class="p">,</span><span class="w">
+          </span><span class="mf">2214.5</span><span class="p">,</span><span class="w">
+          </span><span class="mf">2044.25</span><span class="p">,</span><span class="w">
+          </span><span class="mi">2073</span><span class="p">,</span><span class="w">
+          </span><span class="mf">2166.25</span><span class="p">,</span><span class="w">
+          </span><span class="mf">2136.25</span><span class="p">,</span><span class="w">
+          </span><span class="mf">1896.75</span><span class="p">,</span><span class="w">
+          </span><span class="mf">1483.5</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"59058fa26e9d925205cb93a8"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-04-30T07:17:54.028Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-04-30T07:17:54.028Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MDC_ECG_LEAD_III"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"__v"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="mi">0</span><span class="p">,</span><span class="w">
+          </span><span class="mi">0</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.0000050048828125</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.0000137939453125</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.000049560546875</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.00008740234375</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.00015966796875</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.000262451171875</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.0003975830078125</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.0005687255859375</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.0007802734375</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.001037353515625</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.0013468017578125</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.00172119140625</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.0021756591796875</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.0027232666015625</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.0033880615234375</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.004206787109375</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.0052380371093750005</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.006586181640625</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.008400146484375001</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.010904296875</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.0144892578125</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.0196798095703125</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.049684204101562504</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.0886883544921875</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.11185363769531251</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.134164306640625</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.137352294921875</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.1160369873046875</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.08516308593750001</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.0539765625</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.014997436523437501</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-0.015882568359375</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-0.0387554931640625</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-0.06125732421875</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-0.0745780029296875</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-0.07479357910156251</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-0.0725338134765625</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-0.0418538818359375</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.08582861328125001</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.397717529296875</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.8136408691406251</span><span class="p">,</span><span class="w">
+          </span><span class="mf">1.2295617980957032</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.9944150390625001</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.2824605712890625</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-0.38949267578125</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-0.597251220703125</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-0.425675537109375</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-0.1537947998046875</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-0.0500914306640625</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-0.0111041259765625</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.0027451171875</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.0071739501953125</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.008443359375</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.0094327392578125</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.012530517578125</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.0176046142578125</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.0300162353515625</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.0433489990234375</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.056962646484375004</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.0704832763671875</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.0770511474609375</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.0898175048828125</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.10311853027343751</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.117046142578125</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.1312630615234375</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.1529300537109375</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.167607177734375</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.1899068603515625</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.2124422607421875</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.235044677734375</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.2575535888671875</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.2724073486328125</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.286978271484375</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.3007579345703125</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.3067425537109375</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.3106370849609375</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.303756103515625</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.2897236328125</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.25916931152343753</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.2200599365234375</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.1728209228515625</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.133416259765625</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.086224853515625</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.05493408203125</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.02409423828125</span><span class="p">,</span><span class="w">
+          </span><span class="mf">0.00922607421875</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-0.0043409423828125</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-0.0097349853515625</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-0.013127685546875</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-0.01423095703125</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-0.013834716796875</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-0.012556030273437501</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-0.010675048828125</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-0.00835888671875</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-0.0057305908203125</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-0.0000562744140625</span><span class="p">,</span><span class="w">
+          </span><span class="mi">0</span><span class="p">,</span><span class="w">
+          </span><span class="mi">0</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"59058fa26e9d925205cb93ab"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-04-30T07:17:54.030Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-04-30T07:17:54.030Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MDC_AWAY_CO2"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"__v"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="mf">-793.33</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-929.37</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-1073.03</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-1221.25</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-1375.42</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-1534.93</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-1697.46</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-1865.21</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-2037.77</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-2213.18</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-2392.99</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-2576.45</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-2761.53</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-2949.98</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-3142.27</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-3335.52</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-3526.32</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-3714.22</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-3900.56</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-4077.15</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-4229.41</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-4356.26</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-4461.28</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-4545.9</span><span class="p">,</span><span class="w">
+          </span><span class="mf">-4614.58</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5908896e8f0a0c0d68917b1c"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-05-02T13:29:36.238Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-05-02T13:28:14.807Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"__v"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="mi">1</span><span class="p">,</span><span class="w">
+          </span><span class="mi">2</span><span class="p">,</span><span class="w">
+          </span><span class="mi">3</span><span class="p">,</span><span class="w">
+          </span><span class="mi">4</span><span class="p">,</span><span class="w">
+          </span><span class="mi">5</span><span class="p">,</span><span class="w">
+          </span><span class="mi">5</span><span class="p">,</span><span class="w">
+          </span><span class="mi">5</span><span class="p">,</span><span class="w">
+          </span><span class="mi">5</span><span class="p">,</span><span class="w">
+          </span><span class="mi">5</span><span class="p">,</span><span class="w">
+          </span><span class="mi">4</span><span class="p">,</span><span class="w">
+          </span><span class="mi">3</span><span class="p">,</span><span class="w">
+          </span><span class="mi">2</span><span class="p">,</span><span class="w">
+          </span><span class="mi">1</span><span class="p">,</span><span class="w">
+          </span><span class="mi">1</span><span class="p">,</span><span class="w">
+          </span><span class="mi">1</span><span class="p">,</span><span class="w">
+          </span><span class="mi">1</span><span class="p">,</span><span class="w">
+          </span><span class="mi">1</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves all simulation waveforms.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET /api/simulation/waveforms/find</code></p>
+
+<h3 id="url-parameters">URL Parameters</h3>
+
+<p>No Parameters require.</p>
+
+<h2 id="post-simulation-waveforms">POST Simulation Waveforms</h2>
+
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"response"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="s2">"59089e168f0a0c0d68917b1f"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"59089e168f0a0c0d68917b20"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"59089e168f0a0c0d68917b21"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"59089e168f0a0c0d68917b22"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"59089e168f0a0c0d68917b23"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"59089e168f0a0c0d68917b24"</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint post simulation waveform.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">POST /api/simulation/waveforms</code></p>
+
+<h3 id="url-parameters">URL Parameters</h3>
+
+<p>content-type: application/json</p>
+
+<blockquote>
+<p>example of post data</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"MDC_ECG_LEAD_I"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.0000050048828125</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.0000137939453125</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.000049560546875</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.00008740234375</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.00015966796875</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.000262451171875</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.0003975830078125</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.0005687255859375</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.0007802734375</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.001037353515625</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.0013468017578125</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.00172119140625</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.0021756591796875</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.0027232666015625</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.0033880615234375</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.004206787109375</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.0052380371093750005</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.006586181640625</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.008400146484375001</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.010904296875</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.0144892578125</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.0196798095703125</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.049684204101562504</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.0886883544921875</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.11185363769531251</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.134164306640625</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.137352294921875</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.1160369873046875</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.08516308593750001</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.0539765625</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.014997436523437501</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-0.015882568359375</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-0.0387554931640625</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-0.06125732421875</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-0.0745780029296875</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-0.07479357910156251</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-0.0725338134765625</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-0.0418538818359375</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.08582861328125001</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.397717529296875</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.8136408691406251</span><span class="p">,</span><span class="w">
+    </span><span class="mf">1.2295617980957032</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.9944150390625001</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.2824605712890625</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-0.38949267578125</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-0.597251220703125</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-0.425675537109375</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-0.1537947998046875</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-0.0500914306640625</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-0.0111041259765625</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.0027451171875</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.0071739501953125</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.008443359375</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.0094327392578125</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.012530517578125</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.0176046142578125</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.0300162353515625</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.0433489990234375</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.056962646484375004</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.0704832763671875</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.0770511474609375</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.0898175048828125</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.10311853027343751</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.117046142578125</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.1312630615234375</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.1529300537109375</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.167607177734375</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.1899068603515625</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.2124422607421875</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.235044677734375</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.2575535888671875</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.2724073486328125</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.286978271484375</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.3007579345703125</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.3067425537109375</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.3106370849609375</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.303756103515625</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.2897236328125</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.25916931152343753</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.2200599365234375</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.1728209228515625</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.133416259765625</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.086224853515625</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.05493408203125</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.02409423828125</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.00922607421875</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-0.0043409423828125</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-0.0097349853515625</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-0.013127685546875</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-0.01423095703125</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-0.013834716796875</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-0.012556030273437501</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-0.010675048828125</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-0.00835888671875</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-0.0057305908203125</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-0.0000562744140625</span><span class="p">,</span><span class="w">
+    </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="mi">0</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="s2">"MDC_ECG_LEAD_II"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.0000050048828125</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.0000137939453125</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.000049560546875</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.00008740234375</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.00015966796875</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.000262451171875</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.0003975830078125</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.0005687255859375</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.0007802734375</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.001037353515625</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.0013468017578125</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.00172119140625</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.0021756591796875</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.0027232666015625</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.0033880615234375</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.004206787109375</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.0052380371093750005</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.006586181640625</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.008400146484375001</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.010904296875</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.0144892578125</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.0196798095703125</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.049684204101562504</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.0886883544921875</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.11185363769531251</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.134164306640625</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.137352294921875</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.1160369873046875</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.08516308593750001</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.0539765625</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.014997436523437501</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-0.015882568359375</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-0.0387554931640625</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-0.06125732421875</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-0.0745780029296875</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-0.07479357910156251</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-0.0725338134765625</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-0.0418538818359375</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.08582861328125001</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.397717529296875</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.8136408691406251</span><span class="p">,</span><span class="w">
+    </span><span class="mf">1.2295617980957032</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.9944150390625001</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.2824605712890625</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-0.38949267578125</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-0.597251220703125</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-0.425675537109375</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-0.1537947998046875</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-0.0500914306640625</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-0.0111041259765625</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.0027451171875</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.0071739501953125</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.008443359375</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.0094327392578125</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.012530517578125</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.0176046142578125</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.0300162353515625</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.0433489990234375</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.056962646484375004</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.0704832763671875</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.0770511474609375</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.0898175048828125</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.10311853027343751</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.117046142578125</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.1312630615234375</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.1529300537109375</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.167607177734375</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.1899068603515625</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.2124422607421875</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.235044677734375</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.2575535888671875</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.2724073486328125</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.286978271484375</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.3007579345703125</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.3067425537109375</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.3106370849609375</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.303756103515625</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.2897236328125</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.25916931152343753</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.2200599365234375</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.1728209228515625</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.133416259765625</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.086224853515625</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.05493408203125</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.02409423828125</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.00922607421875</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-0.0043409423828125</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-0.0097349853515625</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-0.013127685546875</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-0.01423095703125</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-0.013834716796875</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-0.012556030273437501</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-0.010675048828125</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-0.00835888671875</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-0.0057305908203125</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-0.0000562744140625</span><span class="p">,</span><span class="w">
+    </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="mi">0</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="s2">"MDC_ECG_LEAD_III"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.0000050048828125</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.0000137939453125</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.000049560546875</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.00008740234375</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.00015966796875</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.000262451171875</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.0003975830078125</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.0005687255859375</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.0007802734375</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.001037353515625</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.0013468017578125</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.00172119140625</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.0021756591796875</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.0027232666015625</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.0033880615234375</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.004206787109375</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.0052380371093750005</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.006586181640625</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.008400146484375001</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.010904296875</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.0144892578125</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.0196798095703125</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.049684204101562504</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.0886883544921875</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.11185363769531251</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.134164306640625</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.137352294921875</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.1160369873046875</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.08516308593750001</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.0539765625</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.014997436523437501</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-0.015882568359375</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-0.0387554931640625</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-0.06125732421875</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-0.0745780029296875</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-0.07479357910156251</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-0.0725338134765625</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-0.0418538818359375</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.08582861328125001</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.397717529296875</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.8136408691406251</span><span class="p">,</span><span class="w">
+    </span><span class="mf">1.2295617980957032</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.9944150390625001</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.2824605712890625</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-0.38949267578125</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-0.597251220703125</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-0.425675537109375</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-0.1537947998046875</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-0.0500914306640625</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-0.0111041259765625</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.0027451171875</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.0071739501953125</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.008443359375</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.0094327392578125</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.012530517578125</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.0176046142578125</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.0300162353515625</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.0433489990234375</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.056962646484375004</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.0704832763671875</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.0770511474609375</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.0898175048828125</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.10311853027343751</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.117046142578125</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.1312630615234375</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.1529300537109375</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.167607177734375</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.1899068603515625</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.2124422607421875</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.235044677734375</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.2575535888671875</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.2724073486328125</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.286978271484375</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.3007579345703125</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.3067425537109375</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.3106370849609375</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.303756103515625</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.2897236328125</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.25916931152343753</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.2200599365234375</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.1728209228515625</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.133416259765625</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.086224853515625</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.05493408203125</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.02409423828125</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.00922607421875</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-0.0043409423828125</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-0.0097349853515625</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-0.013127685546875</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-0.01423095703125</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-0.013834716796875</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-0.012556030273437501</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-0.010675048828125</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-0.00835888671875</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-0.0057305908203125</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-0.0000562744140625</span><span class="p">,</span><span class="w">
+    </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="mi">0</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="s2">"MDC_PRESS_BLD_ART_ABP"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="mf">-0.615617</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-0.593225</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-0.561621</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-0.520447</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-0.4697</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-0.409714</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-0.341109</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-0.264733</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-0.181634</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-0.0930303</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-0.000284727</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.0951251</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.19164</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.287667</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.381656</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.472156</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.557875</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.637704</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.710714</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.776128</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.833297</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.881714</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.921045</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.951157</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.972135</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.984253</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.987913</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.983624</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.971983</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.953633</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.929243</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.899507</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.865121</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.826765</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.785082</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.740661</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.694015</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.645587</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.59582</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.545196</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.494246</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.443533</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.393608</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.344981</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.298127</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.253494</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.211507</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.172554</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.136978</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.105059</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.0770082</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.0529552</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.0329633</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.0170408</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.00512365</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-0.00293051</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-0.00733322</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-0.00836638</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-0.00638339</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-0.00180418</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.00489955</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.0132056</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.0225461</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.0323575</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.0421177</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.0513493</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.0596349</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.0666362</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.0720919</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.0758241</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.0777405</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.0777992</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.0759569</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.0721549</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.0663167</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.058373</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.0483321</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.0363186</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.0225527</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.00728563</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-0.00926222</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-0.0269201</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-0.0455507</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-0.0650429</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-0.0853176</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-0.106298</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-0.127884</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-0.149957</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-0.172377</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-0.194996</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-0.217691</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-0.240364</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-0.26293</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-0.285325</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-0.30749</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-0.329363</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-0.350911</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-0.37213</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-0.393034</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-0.413638</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-0.433932</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-0.453862</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-0.473337</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-0.492255</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-0.510515</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-0.528009</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-0.544592</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-0.56005</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-0.574047</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-0.586056</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-0.595292</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-0.600716</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-0.601094</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="s2">"MDC_PULS_OXIM_PLETH"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="mf">1252.75</span><span class="p">,</span><span class="w">
+    </span><span class="mi">1045</span><span class="p">,</span><span class="w">
+    </span><span class="mi">1175</span><span class="p">,</span><span class="w">
+    </span><span class="mi">1655</span><span class="p">,</span><span class="w">
+    </span><span class="mi">2292</span><span class="p">,</span><span class="w">
+    </span><span class="mf">2853.75</span><span class="p">,</span><span class="w">
+    </span><span class="mf">3056.75</span><span class="p">,</span><span class="w">
+    </span><span class="mf">2913.25</span><span class="p">,</span><span class="w">
+    </span><span class="mf">2553.5</span><span class="p">,</span><span class="w">
+    </span><span class="mf">2214.5</span><span class="p">,</span><span class="w">
+    </span><span class="mf">2044.25</span><span class="p">,</span><span class="w">
+    </span><span class="mi">2073</span><span class="p">,</span><span class="w">
+    </span><span class="mf">2166.25</span><span class="p">,</span><span class="w">
+    </span><span class="mf">2136.25</span><span class="p">,</span><span class="w">
+    </span><span class="mf">1896.75</span><span class="p">,</span><span class="w">
+    </span><span class="mf">1483.5</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="s2">"MDC_AWAY_CO2"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="mf">-793.33</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-929.37</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-1073.03</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-1221.25</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-1375.42</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-1534.93</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-1697.46</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-1865.21</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-2037.77</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-2213.18</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-2392.99</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-2576.45</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-2761.53</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-2949.98</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-3142.27</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-3335.52</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-3526.32</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-3714.22</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-3900.56</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-4077.15</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-4229.41</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-4356.26</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-4461.28</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-4545.9</span><span class="p">,</span><span class="w">
+    </span><span class="mf">-4614.58</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<h2 id="get-simulation-waveform">GET Simulation Waveform</h2>
+
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"response"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"waveform"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"59058fa26e9d925205cb93a7"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-04-30T07:17:54.027Z"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-04-30T07:17:54.027Z"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MDC_ECG_LEAD_II"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"__v"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="mf">0.0000050048828125</span><span class="p">,</span><span class="w">
+        </span><span class="mf">0.0000137939453125</span><span class="p">,</span><span class="w">
+        </span><span class="mf">0.000049560546875</span><span class="p">,</span><span class="w">
+        </span><span class="mf">0.00008740234375</span><span class="p">,</span><span class="w">
+        </span><span class="mf">0.00015966796875</span><span class="p">,</span><span class="w">
+        </span><span class="mf">0.000262451171875</span><span class="p">,</span><span class="w">
+        </span><span class="mf">0.0003975830078125</span><span class="p">,</span><span class="w">
+        </span><span class="mf">0.0005687255859375</span><span class="p">,</span><span class="w">
+        </span><span class="mf">0.0007802734375</span><span class="p">,</span><span class="w">
+        </span><span class="mf">0.001037353515625</span><span class="p">,</span><span class="w">
+        </span><span class="mf">0.0013468017578125</span><span class="p">,</span><span class="w">
+        </span><span class="mf">0.00172119140625</span><span class="p">,</span><span class="w">
+        </span><span class="mf">0.0021756591796875</span><span class="p">,</span><span class="w">
+        </span><span class="mf">0.0027232666015625</span><span class="p">,</span><span class="w">
+        </span><span class="mf">0.0033880615234375</span><span class="p">,</span><span class="w">
+        </span><span class="mf">0.004206787109375</span><span class="p">,</span><span class="w">
+        </span><span class="mf">0.0052380371093750005</span><span class="p">,</span><span class="w">
+        </span><span class="mf">0.006586181640625</span><span class="p">,</span><span class="w">
+        </span><span class="mf">0.008400146484375001</span><span class="p">,</span><span class="w">
+        </span><span class="mf">0.010904296875</span><span class="p">,</span><span class="w">
+        </span><span class="mf">0.0144892578125</span><span class="p">,</span><span class="w">
+        </span><span class="mf">0.0196798095703125</span><span class="p">,</span><span class="w">
+        </span><span class="mf">0.049684204101562504</span><span class="p">,</span><span class="w">
+        </span><span class="mf">0.0886883544921875</span><span class="p">,</span><span class="w">
+        </span><span class="mf">0.11185363769531251</span><span class="p">,</span><span class="w">
+        </span><span class="mf">0.134164306640625</span><span class="p">,</span><span class="w">
+        </span><span class="mf">0.137352294921875</span><span class="p">,</span><span class="w">
+        </span><span class="mf">0.1160369873046875</span><span class="p">,</span><span class="w">
+        </span><span class="mf">0.08516308593750001</span><span class="p">,</span><span class="w">
+        </span><span class="mf">0.0539765625</span><span class="p">,</span><span class="w">
+        </span><span class="mf">0.014997436523437501</span><span class="p">,</span><span class="w">
+        </span><span class="mf">-0.015882568359375</span><span class="p">,</span><span class="w">
+        </span><span class="mf">-0.0387554931640625</span><span class="p">,</span><span class="w">
+        </span><span class="mf">-0.06125732421875</span><span class="p">,</span><span class="w">
+        </span><span class="mf">-0.0745780029296875</span><span class="p">,</span><span class="w">
+        </span><span class="mf">-0.07479357910156251</span><span class="p">,</span><span class="w">
+        </span><span class="mf">-0.0725338134765625</span><span class="p">,</span><span class="w">
+        </span><span class="mf">-0.0418538818359375</span><span class="p">,</span><span class="w">
+        </span><span class="mf">0.08582861328125001</span><span class="p">,</span><span class="w">
+        </span><span class="mf">0.397717529296875</span><span class="p">,</span><span class="w">
+        </span><span class="mf">0.8136408691406251</span><span class="p">,</span><span class="w">
+        </span><span class="mf">1.2295617980957032</span><span class="p">,</span><span class="w">
+        </span><span class="mf">0.9944150390625001</span><span class="p">,</span><span class="w">
+        </span><span class="mf">0.2824605712890625</span><span class="p">,</span><span class="w">
+        </span><span class="mf">-0.38949267578125</span><span class="p">,</span><span class="w">
+        </span><span class="mf">-0.597251220703125</span><span class="p">,</span><span class="w">
+        </span><span class="mf">-0.425675537109375</span><span class="p">,</span><span class="w">
+        </span><span class="mf">-0.1537947998046875</span><span class="p">,</span><span class="w">
+        </span><span class="mf">-0.0500914306640625</span><span class="p">,</span><span class="w">
+        </span><span class="mf">-0.0111041259765625</span><span class="p">,</span><span class="w">
+        </span><span class="mf">0.0027451171875</span><span class="p">,</span><span class="w">
+        </span><span class="mf">0.0071739501953125</span><span class="p">,</span><span class="w">
+        </span><span class="mf">0.008443359375</span><span class="p">,</span><span class="w">
+        </span><span class="mf">0.0094327392578125</span><span class="p">,</span><span class="w">
+        </span><span class="mf">0.012530517578125</span><span class="p">,</span><span class="w">
+        </span><span class="mf">0.0176046142578125</span><span class="p">,</span><span class="w">
+        </span><span class="mf">0.0300162353515625</span><span class="p">,</span><span class="w">
+        </span><span class="mf">0.0433489990234375</span><span class="p">,</span><span class="w">
+        </span><span class="mf">0.056962646484375004</span><span class="p">,</span><span class="w">
+        </span><span class="mf">0.0704832763671875</span><span class="p">,</span><span class="w">
+        </span><span class="mf">0.0770511474609375</span><span class="p">,</span><span class="w">
+        </span><span class="mf">0.0898175048828125</span><span class="p">,</span><span class="w">
+        </span><span class="mf">0.10311853027343751</span><span class="p">,</span><span class="w">
+        </span><span class="mf">0.117046142578125</span><span class="p">,</span><span class="w">
+        </span><span class="mf">0.1312630615234375</span><span class="p">,</span><span class="w">
+        </span><span class="mf">0.1529300537109375</span><span class="p">,</span><span class="w">
+        </span><span class="mf">0.167607177734375</span><span class="p">,</span><span class="w">
+        </span><span class="mf">0.1899068603515625</span><span class="p">,</span><span class="w">
+        </span><span class="mf">0.2124422607421875</span><span class="p">,</span><span class="w">
+        </span><span class="mf">0.235044677734375</span><span class="p">,</span><span class="w">
+        </span><span class="mf">0.2575535888671875</span><span class="p">,</span><span class="w">
+        </span><span class="mf">0.2724073486328125</span><span class="p">,</span><span class="w">
+        </span><span class="mf">0.286978271484375</span><span class="p">,</span><span class="w">
+        </span><span class="mf">0.3007579345703125</span><span class="p">,</span><span class="w">
+        </span><span class="mf">0.3067425537109375</span><span class="p">,</span><span class="w">
+        </span><span class="mf">0.3106370849609375</span><span class="p">,</span><span class="w">
+        </span><span class="mf">0.303756103515625</span><span class="p">,</span><span class="w">
+        </span><span class="mf">0.2897236328125</span><span class="p">,</span><span class="w">
+        </span><span class="mf">0.25916931152343753</span><span class="p">,</span><span class="w">
+        </span><span class="mf">0.2200599365234375</span><span class="p">,</span><span class="w">
+        </span><span class="mf">0.1728209228515625</span><span class="p">,</span><span class="w">
+        </span><span class="mf">0.133416259765625</span><span class="p">,</span><span class="w">
+        </span><span class="mf">0.086224853515625</span><span class="p">,</span><span class="w">
+        </span><span class="mf">0.05493408203125</span><span class="p">,</span><span class="w">
+        </span><span class="mf">0.02409423828125</span><span class="p">,</span><span class="w">
+        </span><span class="mf">0.00922607421875</span><span class="p">,</span><span class="w">
+        </span><span class="mf">-0.0043409423828125</span><span class="p">,</span><span class="w">
+        </span><span class="mf">-0.0097349853515625</span><span class="p">,</span><span class="w">
+        </span><span class="mf">-0.013127685546875</span><span class="p">,</span><span class="w">
+        </span><span class="mf">-0.01423095703125</span><span class="p">,</span><span class="w">
+        </span><span class="mf">-0.013834716796875</span><span class="p">,</span><span class="w">
+        </span><span class="mf">-0.012556030273437501</span><span class="p">,</span><span class="w">
+        </span><span class="mf">-0.010675048828125</span><span class="p">,</span><span class="w">
+        </span><span class="mf">-0.00835888671875</span><span class="p">,</span><span class="w">
+        </span><span class="mf">-0.0057305908203125</span><span class="p">,</span><span class="w">
+        </span><span class="mf">-0.0000562744140625</span><span class="p">,</span><span class="w">
+        </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="mi">0</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves one simulation waveform.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET /api/simulation/waveforms/:waveform_id</code></p>
+
+<h3 id="url-parameters">URL Parameters</h3>
+
+<p>No Parameters require.</p>
+
+<h2 id="patch-simulation-waveform">PATCH Simulation Waveform</h2>
+
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"response"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"59058fa26e9d925205cb93a7"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint patch simulation waveform.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">PATCH /api/simulation/waveforms/:waveform_id</code></p>
+
+<h3 id="url-parameters">URL Parameters</h3>
+
+<p>content-type: application/json</p>
+
+<blockquote>
+<p>example of patch data</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+</span><span class="s2">"asd"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<h2 id="delete-simulation-waveform">DELETE Simulation Waveform</h2>
+
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"response"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint delete simulation waveform.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">DELETE /api/simulation/waveforms/:waveform_id</code></p>
+
+<h3 id="url-parameters">URL Parameters</h3>
+
+<p>No Parameters require.</p>
+
+<h1 id="simulation-vital-signs">Simulation Vital Signs</h1>
+
+<h2 id="get-simulation-vital-signs-list">GET Simulation Vital Signs List</h2>
+
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"response"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"vital_signs"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"59058fa56e9d925205cb93ac"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-05-01T05:19:51.515Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-04-30T07:17:57.618Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MDC_ECG_HEART_RATE"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"top"</span><span class="p">:</span><span class="w"> </span><span class="mi">120</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"bottom"</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="mi">60</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"template"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HR"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"__v"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"59058fa56e9d925205cb93af"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-04-30T07:17:57.620Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-04-30T07:17:57.620Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MDC_CO2_RESP_RATE"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"top"</span><span class="p">:</span><span class="w"> </span><span class="mi">45</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"bottom"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="mi">36</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"template"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HR"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"__v"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"59058fa56e9d925205cb93ad"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-04-30T07:17:57.619Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-04-30T07:17:57.619Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MDC_PULS_OXIM_PULS_RATE"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"top"</span><span class="p">:</span><span class="w"> </span><span class="mi">120</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"bottom"</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="mi">90</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"template"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HR"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"__v"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"59058fa56e9d925205cb93ae"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-04-30T07:17:57.620Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-04-30T07:17:57.620Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MDC_PULS_OXIM_SAT_O2"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"top"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"bottom"</span><span class="p">:</span><span class="w"> </span><span class="mi">90</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="mi">98</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"template"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HR"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"__v"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"59058fa56e9d925205cb93b3"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-04-30T07:17:57.621Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-04-30T07:17:57.621Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PAP"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"systolic"</span><span class="p">:</span><span class="w"> </span><span class="mi">32</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"diastolic"</span><span class="p">:</span><span class="w"> </span><span class="mi">18</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"mean"</span><span class="p">:</span><span class="w"> </span><span class="mi">23</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"sysTop"</span><span class="p">:</span><span class="w"> </span><span class="mi">150</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"sysBottom"</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"diaTop"</span><span class="p">:</span><span class="w"> </span><span class="mi">150</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"diaBottom"</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"template"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BP"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"__v"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"59058fa56e9d925205cb93b4"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-04-30T07:17:57.621Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-04-30T07:17:57.621Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NBP"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"systolic"</span><span class="p">:</span><span class="w"> </span><span class="mi">125</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"diastolic"</span><span class="p">:</span><span class="w"> </span><span class="mi">84</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"mean"</span><span class="p">:</span><span class="w"> </span><span class="mi">92</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"sysTop"</span><span class="p">:</span><span class="w"> </span><span class="mi">150</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"sysBottom"</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"diaTop"</span><span class="p">:</span><span class="w"> </span><span class="mi">150</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"diaBottom"</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"template"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BP"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"__v"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"59058fa56e9d925205cb93b1"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-04-30T07:17:57.620Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-04-30T07:17:57.620Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MDC_AWAY_CO2_ET"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"top"</span><span class="p">:</span><span class="w"> </span><span class="mi">65</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"bottom"</span><span class="p">:</span><span class="w"> </span><span class="mi">25</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="mi">34</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"template"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HR"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"__v"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"59058fa56e9d925205cb93b2"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-04-30T07:17:57.621Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-04-30T07:17:57.621Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MDC_PRESS_BLD_ART_ABP_NUMERIC"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"systolic"</span><span class="p">:</span><span class="w"> </span><span class="mi">122</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"diastolic"</span><span class="p">:</span><span class="w"> </span><span class="mi">82</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"mean"</span><span class="p">:</span><span class="w"> </span><span class="mi">93</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"sysTop"</span><span class="p">:</span><span class="w"> </span><span class="mi">150</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"sysBottom"</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"diaTop"</span><span class="p">:</span><span class="w"> </span><span class="mi">150</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"diaBottom"</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"template"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BP"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"__v"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"59088a4b8f0a0c0d68917b1e"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-05-02T13:32:07.978Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-05-02T13:31:55.482Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"systolic"</span><span class="p">:</span><span class="w"> </span><span class="mi">150</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"diastolic"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"mean"</span><span class="p">:</span><span class="w"> </span><span class="mi">93</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"sysTop"</span><span class="p">:</span><span class="w"> </span><span class="mi">150</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"sysBottom"</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"diaTop"</span><span class="p">:</span><span class="w"> </span><span class="mi">150</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"diaBottom"</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"template"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BP"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"__v"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves all simulation vital signs.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET /api/simulation/vital_signs/find</code></p>
+
+<h3 id="url-parameters">URL Parameters</h3>
+
+<p>No Parameters require.</p>
+
+<h2 id="post-simulation-vital-signs">POST Simulation Vital Signs</h2>
+
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"response"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="s2">"5908a4848f0a0c0d68917b25"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"5908a4848f0a0c0d68917b26"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"5908a4848f0a0c0d68917b27"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"5908a4848f0a0c0d68917b28"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"5908a4848f0a0c0d68917b29"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"5908a4848f0a0c0d68917b2a"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"5908a4848f0a0c0d68917b2b"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"5908a4848f0a0c0d68917b2c"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"5908a4848f0a0c0d68917b2d"</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint post simulation vital signs.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">POST /api/simulation/vital_signs</code></p>
+
+<h3 id="url-parameters">URL Parameters</h3>
+
+<p>content-type: application/json</p>
+
+<blockquote>
+<p>example of post data</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"MDC_ECG_HEART_RATE"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"top"</span><span class="p">:</span><span class="w"> </span><span class="mi">120</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"bottom"</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="mi">90</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"template"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HR"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"MDC_PULS_OXIM_PULS_RATE"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"top"</span><span class="p">:</span><span class="w"> </span><span class="mi">120</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"bottom"</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="mi">90</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"template"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HR"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"MDC_PULS_OXIM_SAT_O2"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"top"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"bottom"</span><span class="p">:</span><span class="w"> </span><span class="mi">90</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="mi">98</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"template"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HR"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"MDC_CO2_RESP_RATE"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"top"</span><span class="p">:</span><span class="w"> </span><span class="mi">45</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"bottom"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="mi">36</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"template"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HR"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"MDC_TTHOR_RESP_RATE"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"top"</span><span class="p">:</span><span class="w"> </span><span class="mi">45</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"bottom"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="mi">36</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"template"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HR"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"MDC_AWAY_CO2_ET"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"top"</span><span class="p">:</span><span class="w"> </span><span class="mi">65</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"bottom"</span><span class="p">:</span><span class="w"> </span><span class="mi">25</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="mi">34</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"template"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HR"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"MDC_PRESS_BLD_ART_ABP_NUMERIC"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"systolic"</span><span class="p">:</span><span class="w"> </span><span class="mi">122</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"diastolic"</span><span class="p">:</span><span class="w"> </span><span class="mi">82</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"mean"</span><span class="p">:</span><span class="w"> </span><span class="mi">93</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"sysTop"</span><span class="p">:</span><span class="w"> </span><span class="mi">150</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"sysBottom"</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"diaTop"</span><span class="p">:</span><span class="w"> </span><span class="mi">150</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"diaBottom"</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"template"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BP"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"PAP"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"systolic"</span><span class="p">:</span><span class="w"> </span><span class="mi">32</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"diastolic"</span><span class="p">:</span><span class="w"> </span><span class="mi">18</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"mean"</span><span class="p">:</span><span class="w"> </span><span class="mi">23</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"sysTop"</span><span class="p">:</span><span class="w"> </span><span class="mi">150</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"sysBottom"</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"diaTop"</span><span class="p">:</span><span class="w"> </span><span class="mi">150</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"diaBottom"</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"template"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BP"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"NBP"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"systolic"</span><span class="p">:</span><span class="w"> </span><span class="mi">125</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"diastolic"</span><span class="p">:</span><span class="w"> </span><span class="mi">84</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"mean"</span><span class="p">:</span><span class="w"> </span><span class="mi">92</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"sysTop"</span><span class="p">:</span><span class="w"> </span><span class="mi">150</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"sysBottom"</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"diaTop"</span><span class="p">:</span><span class="w"> </span><span class="mi">150</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"diaBottom"</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"template"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BP"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre>
+<h2 id="get-simulation-vital-signs">GET Simulation Vital Signs</h2>
+
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"response"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"vital_sign"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"59058fa56e9d925205cb93ac"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-05-01T05:19:51.515Z"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-04-30T07:17:57.618Z"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MDC_ECG_HEART_RATE"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"top"</span><span class="p">:</span><span class="w"> </span><span class="mi">120</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"bottom"</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="mi">60</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="s2">"template"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HR"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"__v"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves one simulation vital sign.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET /api/simulation/waveforms/:vital_signs_id</code></p>
+
+<h3 id="url-parameters">URL Parameters</h3>
+
+<p>No Parameters require.</p>
+
+<h2 id="patch-simulation-vital-signs">PATCH Simulation Vital Signs</h2>
+
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"response"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"59058fa56e9d925205cb93ac"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint patch simulation vital sign.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">PATCH /api/simulation/waveforms/:vital_signs_id</code></p>
+
+<h3 id="url-parameters">URL Parameters</h3>
+
+<p>content-type: application/json</p>
+
+<blockquote>
+<p>example of patch data</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"MDC_ECG_HEART_RATE"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"top"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"bottom"</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="mi">90</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"template"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HR"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<h2 id="delete-simulation-vital-signs">DELETE Simulation Vital Signs</h2>
+
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"response"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint delete simulation vital sign.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">DELETE /api/simulation/waveforms/:vital_signs_id</code></p>
+
+<h3 id="url-parameters">URL Parameters</h3>
+
+<p>No Parameters require.</p>
+
+          
+      </div>
+      <div class="dark-box">
+          <div class="lang-selector">
+                <a href="#" data-language-name="details">details</a>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>
