@@ -45,7 +45,7 @@ exports.postSimulationWaveform = (req, res) => {
 exports.getSimulationWaveform = (req, res) => {
 	WaveformSimulation.findOne({_id: req.params.waveform_id})
 		.then((foundWaveform) => {
-			console.log(foundWaveform);
+			// console.log(foundWaveform);
 			if (!foundWaveform) {
 				return res.json(uilityFunction.apiOutputTemplate('error', 'Not found'));
 			}
@@ -66,7 +66,7 @@ exports.patchSimulationWaveform = (req, res) => {
 			if (!foundWaveform) {
 				return res.json(uilityFunction.apiOutputTemplate('error', 'Not Found'));
 			}
-			console.log(req.body)
+			// console.log(req.body)
 			for (let type in req.body) {
 				foundWaveform.type = type || foundWaveform.type;
 				foundWaveform.value = req.body[type] || foundWaveform.value;
@@ -74,7 +74,7 @@ exports.patchSimulationWaveform = (req, res) => {
 			return foundWaveform.save();
 		})
 		.then((savedFoundWaveform) => {
-		console.log(savedFoundWaveform)
+		// console.log(savedFoundWaveform)
 			return res.json(uilityFunction.apiOutputTemplate('success', 'success', {
 				_id: savedFoundWaveform.id
 			}));
@@ -92,7 +92,7 @@ exports.deleteSimulationWaveform = (req, res) => {
 			if (commonResult.result.n === 0) {
 				return res.json(uilityFunction.apiOutputTemplate('error', 'Not found'));
 			}
-			console.log(commonResult);
+			// console.log(commonResult);
 			return res.json(uilityFunction.apiOutputTemplate('success', 'success', {
 				count: commonResult.result.n
 			}));
@@ -108,7 +108,7 @@ exports.deleteSimulationWaveform = (req, res) => {
 exports.listSimulationVitalSign = (req, res) => {
 	VitalSignSimulation.find({})
 		.then((allVitalSigns) => {
-			console.log(allVitalSigns);
+			// console.log(allVitalSigns);
 			return res.json(uilityFunction.apiOutputTemplate('success', 'success', {
 				vital_signs: allVitalSigns
 			}));
@@ -144,7 +144,7 @@ exports.postSimulationVitalSign = (req, res) => {
 exports.getSimulationVitalSign = (req, res) => {
 	VitalSignSimulation.findOne({_id: req.params.vital_signs_id})
 		.then((foundVitalSign) => {
-			console.log(foundVitalSign);
+			// console.log(foundVitalSign);
 			if (!foundVitalSign) {
 				return res.json(uilityFunction.apiOutputTemplate('error', 'Not found'));
 			}
@@ -163,7 +163,7 @@ exports.getSimulationVitalSign = (req, res) => {
 exports.patchSimulationVitalSign = (req, res) => {
 	VitalSignSimulation.findOne({_id: req.params.vital_signs_id})
 		.then((foundVitalSign) => {
-			console.log(foundVitalSign);
+			// console.log(foundVitalSign);
 			if (!foundVitalSign) {
 				return res.json(uilityFunction.apiOutputTemplate('error', 'Not Found'));
 			}
@@ -192,7 +192,7 @@ exports.deleteSimulationVitalSign = (req, res) => {
 			if (commonResult.result.n === 0) {
 				return res.json(uilityFunction.apiOutputTemplate('error', 'Not found'));
 			}
-			console.log(commonResult);
+			// console.log(commonResult);
 			return res.json(uilityFunction.apiOutputTemplate('success', 'success', {
 				count: commonResult.result.n
 			}));
@@ -203,3 +203,56 @@ exports.deleteSimulationVitalSign = (req, res) => {
 			}));
 		});
 };
+
+
+exports.postWaveformRecording = (req, res) => {
+	let deviceId = req.body.device_id;
+	let sampleArray = req.body.sample_array
+	if (!process.devices[deviceId])
+		return res.json(uilityFunction.apiOutputTemplate('error', 'device not found'));
+
+	if (!process.devices[deviceId]["recording"]) {
+		process.devices[deviceId]["recording"] = {}
+	}
+	if (!process.devices[deviceId]["recording"]["sampleArray"]) {
+		process.devices[deviceId]["recording"]["sampleArray"] = {}
+	}
+
+	Object.keys(sampleArray)
+		.map((formField) => {
+			let metric = formField.match(/(.*)_is_record/);
+			if (metric) {
+				return metric[1];
+			}
+		})
+		.filter((metric) => metric)
+		.forEach((metric) => {
+			if (process.devices[deviceId]["recording"]["sampleArray"][metric]) {
+				return res.json(uilityFunction.apiOutputTemplate('error', 'The request metric have already been recording'));
+			}
+
+			console.log(metric);
+
+			let name = req.body.sample_array[`${metric}_record_name`];
+			let duration = req.body.sample_array[`${metric}_duration`];
+			let frequency = process.devices[deviceId]["sampleArray"][metric].frequency;
+
+
+			process.devices[deviceId]["recording"]["sampleArray"][metric] = true;
+			setTimeout(() => {
+				console.log(`${name} setTimeout`);
+				WaveformSimulation.create({
+					type: `record_${frequency}_${name}_${duration}_${Math.random().toString(36).slice(-6)}`,
+					value: process.devices[deviceId]["sampleArray"][metric].value
+				}).then(() => {
+					delete process.devices[deviceId]["sampleArray"][metric]
+					delete process.devices[deviceId]["recording"]["sampleArray"][metric];
+				});
+			}, duration * 60 * 1000);
+	});
+
+	return res.json(uilityFunction.apiOutputTemplate('success', 'success'));
+};
+
+
+

@@ -47,6 +47,8 @@ api.get('/simulation/vital_signs/:vital_signs_id', apiController.getSimulationVi
 api.patch('/simulation/vital_signs/:vital_signs_id', apiController.patchSimulationVitalSign);
 api.delete('/simulation/vital_signs/:vital_signs_id', apiController.deleteSimulationVitalSign);
 
+api.post('/waveforms/recording', apiController.postWaveformRecording);
+
 api.use(handleAPIError);
 app.use('/api', api);
 function handleAPIError(err, req, res, next) {

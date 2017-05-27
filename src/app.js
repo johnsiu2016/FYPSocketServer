@@ -74,7 +74,8 @@ function onDataAvailableSA() {
 			// console.log(sampleArray.frequency);
 			// console.log(sampleArray.values.length);
 
-			let formatFrequency = 60 * Math.ceil(frequency / 60);
+			let formatFrequency = 60 * Math.ceil(frequency / 60); // format to 60m, m is integer
+			// device time range, eg. frequency 500, data length 1000. After format: 540, data length 1080, time range 2s
 			let time = Math.floor((values.length / frequency));
 			let formatLength = formatFrequency * time;
 			let formatWaveform = interpolateArray(values, formatLength);
@@ -97,13 +98,22 @@ function onDataAvailableSA() {
 				devices[unique_device_identifier]['sampleArray'] = {};
 			}
 			if (!devices[unique_device_identifier]['sampleArray'][metric_id]) {
-				devices[unique_device_identifier]['sampleArray'][metric_id] = [];
+				devices[unique_device_identifier]['sampleArray'][metric_id] = {
+					value: [],
+					frequency: frequency
+				};
 			}
-			//devices[unique_device_identifier]['sampleArray'][metric_id].push(normalizedWaveform);
+			if (devices[unique_device_identifier]["recording"]
+				&& devices[unique_device_identifier]["recording"]["sampleArray"][metric_id]) {
+				devices[unique_device_identifier]['sampleArray'][metric_id].value.push(...values);
+				//console.log(devices[unique_device_identifier]['sampleArray'][metric_id].value.length);
+			}
 			emitDatatoClient(unique_device_identifier, metric_id, {
 				normalizedWaveform,
 				frequency: formatFrequency
 			});
+
+			//console.log('test',devices);
 
 			// console.log('length', normalizedWaveform.length);
 			// console.log('frequency', formatFrequency);
