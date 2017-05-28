@@ -1,4 +1,4 @@
-const uilityFunction = require('../../utils/utilityFunctions');
+const uilityFunction = require('../utils/utilityFunctions');
 const WaveformSimulation = require('../models/SimulationWaveform');
 const VitalSignSimulation = require('../models/SimulationVitalSign');
 

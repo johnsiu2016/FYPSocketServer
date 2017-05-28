@@ -1,27 +1,28 @@
-const express = require('express');
-const app = express();
-const mongoose = require('mongoose');
-const bodyParser = require('body-parser');
-const logger = require('morgan');
-const path = require('path');
-const uilityFunction = require('./utils/utilityFunctions');
+'use strict';
+
+var express = require('express');
+var app = express();
+var mongoose = require('mongoose');
+var bodyParser = require('body-parser');
+var logger = require('morgan');
+var path = require('path');
 
 app.use(logger('dev'));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use('/', express.static(path.join(__dirname, 'public')));
 
 mongoose.Promise = global.Promise;
 mongoose.connect('mongodb://localhost:27017/patientMonitor');
-mongoose.connection.on('error', () => {
+mongoose.connection.on('error', function () {
 	console.log('MongoDB connection error. Please make sure MongoDB is running.');
 	process.exit();
 });
 
-app.use(function(req, res, next) {
-	const allowedOrigins = ['http://localhost:3000'];
-	const origin = req.headers.origin;
-	if(allowedOrigins.indexOf(origin) > -1){
+app.use(function (req, res, next) {
+	var allowedOrigins = ['http://localhost:3000'];
+	var origin = req.headers.origin;
+	if (allowedOrigins.indexOf(origin) > -1) {
 		res.setHeader('Access-Control-Allow-Origin', origin);
 	}
 
@@ -31,8 +32,8 @@ app.use(function(req, res, next) {
 	return next();
 });
 
-const apiController = require('./controllers/api');
-const api = express.Router();
+var apiController = require('./controllers/api');
+var api = express.Router();
 
 api.get('/devices', apiController.getDevices);
 
@@ -53,7 +54,7 @@ api.post('/waveforms/recording', apiController.postWaveformRecording);
 api.use(handleAPIError);
 app.use('/api', api);
 function handleAPIError(err, req, res, next) {
-	let message = "";
+	var message = "";
 	switch (err.status) {
 		default:
 			console.log(err);
@@ -63,6 +64,4 @@ function handleAPIError(err, req, res, next) {
 	return res.json(uilityFunction.apiOutputTemplate("error", 'error', message));
 }
 
-app.listen(4000, () => {
-
-});
+app.listen(4000, function () {});
